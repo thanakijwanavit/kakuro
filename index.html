@@ -40,12 +40,11 @@
   <script>
     
 document.getElementById("submit").addEventListener("click", outputdata);
-function myFunction() {
-    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-}
 function outputdata(){
-    document.getElementById("output").innerHTML = "thanks for clicking me but we are still in beta";
-}
+    var data = getElementById('form1');
+    var text = 'topsum is '+ data.topsum + '<br> toplength is ' + data.toplength + '<br> sidesum is ' data.sidesum + '<br> sidelength is ' + data.sidelength
+    document.getElementById("output").innerHTML = text;
+
   </script>
 </body>
 </html>
