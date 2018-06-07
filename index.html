@@ -19,7 +19,7 @@
 
 <body>
   
-  <form action="">
+  <form id="form1">
   topsum:<br>
   <input type="text" name="topsum" value="8">
   <br>
@@ -32,12 +32,21 @@
   sidelength:<br>
   <input type="text" name="sidelength" value="2">
   <br><br>
-  <input type="submit" value="Submit">
+  <input id="submit" type="submit" value="Submit">
   </form> 
-
   
-  
+  <p id="output"><p>
   <p> welcome to the kakuro solver </p>
   <script src="js/scripts.js"></script>
+  <script>
+    
+document.getElementById("submit").addEventListener("click", outputdata);
+function myFunction() {
+    document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+function outputdata(){
+    document.getElementById("output").innerHTML = "thanks for clicking me but we are still in beta";
+}
+  </script>
 </body>
 </html>
