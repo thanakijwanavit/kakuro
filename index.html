@@ -32,7 +32,7 @@
   sidelength:<br>
   <input type="text" name="sidelength" value="2">
   <br><br>
-  <input id="submit" type="submit" value="Submit">
+  <input id="submit" type="button" value="Submit">
   </form> 
   
   <p id="output"> welcome to the kakuro solver </p>
@@ -42,7 +42,7 @@
     document.getElementById("submit").addEventListener("click", outputdata);
     function outputdata(){
       var data = document.getElementById('form1');
-      var text = 'topsum is '+ data.topsum.value + '<br> toplength is ' + data.toplength.value + '<br> sidesum is ' data.sidesum.value + '<br> sidelength is ' + data.sidelength.value;
+      var text = 'topsum is '+ data.topsum.value + '<br> toplength is ' + data.toplength.value + '<br> sidesum is ' + data.sidesum.value + '<br> sidelength is ' + data.sidelength.value
       document.getElementById("output").innerHTML = text;
       }
   </script>
