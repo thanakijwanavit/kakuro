@@ -39,12 +39,12 @@
   <script src="js/scripts.js"></script>
   <script>
     
-document.getElementById("submit").addEventListener("click", outputdata);
-function outputdata(){
-    var data = document.getElementById('form1');
-    var text = 'topsum is '+ data.topsum.value + '<br> toplength is ' + data.toplength.value + '<br> sidesum is ' data.sidesum.value + '<br> sidelength is ' + data.sidelength.value
-    document.getElementById("output").innerHTML = text;
-
+    document.getElementById("submit").addEventListener("click", outputdata);
+    function outputdata(){
+      var data = document.getElementById('form1');
+      var text = 'topsum is '+ data.topsum.value + '<br> toplength is ' + data.toplength.value + '<br> sidesum is ' data.sidesum.value + '<br> sidelength is ' + data.sidelength.value;
+      document.getElementById("output").innerHTML = text;
+      }
   </script>
 </body>
 </html>
