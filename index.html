@@ -42,7 +42,7 @@
 document.getElementById("submit").addEventListener("click", outputdata);
 function outputdata(){
     var data = getElementById('form1');
-    var text = 'topsum is '+ data.topsum + '<br> toplength is ' + data.toplength + '<br> sidesum is ' data.sidesum + '<br> sidelength is ' + data.sidelength
+    var text = 'topsum is '+ data.topsum.value + '<br> toplength is ' + data.toplength.value + '<br> sidesum is ' data.sidesum.value + '<br> sidelength is ' + data.sidelength.value
     document.getElementById("output").innerHTML = text;
 
   </script>
