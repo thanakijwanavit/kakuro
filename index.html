@@ -54,7 +54,7 @@
   <script>
   $(document).ready(function(){
       $("button").click(function(){
-          $.get("/python/test.py", function(data){
+          $.get("https://tfngbfhvqd.execute-api.us-east-1.amazonaws.com/deploymenttest/kakuro?toplength=3&topsum=7&sidelength=3&sidesum=10", function(data){
             alert("Data: " + data);
           });
       });
