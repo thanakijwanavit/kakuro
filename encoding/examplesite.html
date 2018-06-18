@@ -1,0 +1,56 @@
+
+<html>
+
+    <head>
+
+        <script src="https://kjur.github.io/jsrsasign/jsrsasign-all-min.js"></script>
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.1/math.min.js"></script> -->
+        <script>
+          function print(string)
+        {
+            document.write(string + "\n\n");
+        }
+          
+        print('hello world')
+        
+        
+        //signsomething
+          
+        var privkey =KEYUTIL.getKey("-----BEGIN RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,B12707B2A4F9393134346C67ADD1A66D\n\nI1vV5cHSpu3J9PsKxZxKhMIvLAugys9CxylPsB7OxAxPPG75c2nvBMVkJ0NdiKgs\nku2mfUvtLFxOoLIkfPmtHkFJ22iqrdKDVbCf73tKJdwf5GNbzC9hTqWRCnhVyS7o\n6r+Ghtw9eZfTtxRBiKLq6KSQYXqDs5f9fDgtDTrhVF0XapMgaqi6FvLM7sSsbXcI\nrxnHSEporhlpZ+Ax2uM9txJzf6HeF+Fmw3II7s81DQQRGy23C0njebFwekIUKPPq\nZFtRakN4/2M9aPIUG7pVpw+aX+ZGab9eMHDVs/I23Xk3Cm1NfkNjoKaa6KT4lI0I\nVDixqe3vzPBPsh+T1dxs2CbKAbjjN8NJUv0BRkyZ/k60+zDiUNry7SIR/9vLDS7C\ntJRlkoskCuZ/5bV4QjE3ekgPusQEJZ9kVKwkL2eLn8imI4gvUehmcrQwC/xY3/Yt\nXLy8wBBQwTN8FKTgNa1m5vlmZqgScMFkwM6gj/zZ4/HJALTd6fJTJiUxwSr0Qw8e\n/lriW1EsoyiBKgXsQL7cm3mwW8SqEMk7cPTesQHiX09rl5BY+EMCncM65ey4rScS\nG81zvkUn/R4DroVClfcjL+0e+aBRrfLGzwJtS7VV+3XW0HGHaqOKMBey2GRN1/Fj\nXxhP6/BFZt33Jno6h6lF931LRlfK9u/XZZ+7BzjGAfjHfbGWojiDrAXPXkezfUSM\nth+xa0K7i1kmvq3dw4w8Z9DtHRWSTEb+1AqNmlmqpSJu6cmxrUQ+941K7qpgjt3d\n5/yT5V7aWiIpwnvbEgE+MaV5SBSP5ELpf9NuQ7HNsAYcreexPKWN/f7sX7OHcBg3\nJjXBGSpyT2ot6L/RH47W9vhTpzdhd47d1tOMa4SgG64jggIG+1Vpx5iPQ9Sni5ZZ\n3BWcBk2rL4DsVbDveOFow4NLpw7o7a9kqV5cCkmqgR4Va4b1qKokq8C57X+FOCVA\n+HVDVSDiInMNb16WiqDMRam2JZftHK01r3b01R2YK1gRaoOXf32DcpXdbgj4HljS\nc5zaH+5QXqcRw5TZY2BfXuNoXlRNmc+D4tl/Hc3dt7uzg0ybTYM+T1fSuLoDOg3G\nkAYp/0kTMc86o6u7Sw2sBkpJ8ADsMrMLcPPkDGXB/SHhMxQ4IL31TwX2Uk/tJv8C\nyRsr4MUKAFS5QtMyjtEWdDLb7f7DcKWE8/rxdgNb3sPm574hFyAIjfK6pZCe2LEi\n4NliCygweN3t0XfisgsFBjsNqZ8sPEXHQOvrtXcWLkPwc+zJPCH2cPcTGdsPZ7Y7\nBgb3vP1KDycJONHV0iNk4tqufeAovH+5QnaWLJ2yhBHF3bvAeave3ZsSfmVx/kYn\nQCCN2vn2FTFCnU5YOo6RzCI/jqXY2gvZY0lcJP26kEs5igVKb7PKVmu+sw5cK9Bs\nEuIQEO3sj3B7vbakHZ9j39MsC6Lnv4U7SHsOtC/5LkeN5jOlbeh6Buv70RQcHdLo\nvwrWLA7wSqMk8cBgy/tJPe4cKT5dtDA8gj9zGHe1hmbrIAOSqgWOZcWRdCBv/rC/\nno1fmoembE/Wx/UvcCafmXhYHNNJ207Fm1rbLgysoQq4AwOM8zWbPi6EPmT4pHEw\n-----END RSA PRIVATE KEY-----","igakgbin");                                
+        // generate Signature object
+        sig = new KJUR.crypto.Signature({"alg": "SHA256withRSA"});
+        // set private key for sign
+        sig.init(privkey);
+        // update data
+        sig.updateString("aaa");
+        // calculate signature
+        sigHex = sig.sign();
+        print(sigHex);
+        //print(JSON.stringify(sigHex));
+        //print(JSON.stringify(key.prvKeyObj));
+          
+          
+        //verify something
+          
+        // load public key
+        pub = KEYUTIL.getKey("-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtJ9maHWrBV3Nzn7elVnn\nNtcaYaMYUAObAFFXA5uvQaGyDD/JaypyUf4k9c56i4HDr5Tx1I7Dt48qgyX0BNyh\nIrwCjmWHi95NXqU9WLJPV0O5ulLkogrNz1ItqQYfzcLIxJOHRY9R8CPAHtjwkGt2\nrqRBYkOyKgliSFfeQgPpSRTIyA269kVkBIJehGVuwjE4ilwQhjR5XgNg2v+jNAA6\nYx+r1XI2nES1ofmIIVWcfzKFUizER/6HkcE1XZPagDSF9H7XopM676zemRU7Kv0Z\n/BHh2ts0X9sO/hxQvmKENaq1sps/mPMguSjA+xQDeNh8J5NAGCDiL85xjjud73C3\nhwIDAQAB\n-----END PUBLIC KEY-----");
+        // generate Signature object
+        sig1 = new KJUR.crypto.Signature({"alg": "SHA256withRSA"});
+        // set private key for sign
+        sig1.init(pub);
+        // update data
+        sig1.updateString("aaa");
+        // verify signature
+        isValid = sig1.verify(sigHex);
+        print(JSON.stringify(isValid));
+        
+        </script>
+
+    </head>
+    
+    <body style="font-family: monospace; white-space:pre;">
+
+    </body>
+    
+</html>
+
